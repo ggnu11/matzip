@@ -1,12 +1,8 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import AuthNavigation from './src/navigations/AuthNavigation';
 
 function App(): React.JSX.Element {
-  return (
-    <View>
-      <Text>Hello World</Text>
-    </View>
-  );
+  return <AuthNavigation />;
 }
 
 export default App;
