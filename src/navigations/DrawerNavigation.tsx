@@ -1,14 +1,20 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import MapHomeScreen from '../screens/map/MapHomeScreen';
-import FeedListScreen from '../screens/feed/FeedListScreen';
-import CalendarScreen from '../calendar/CalendarScreen';
 import {createStaticNavigation} from '@react-navigation/native';
+import CalendarScreen from '../calendar/CalendarScreen';
+import FeedStack from './FeedNavigation';
+import MapStack from './MapNavigation';
 
 const MainDrawer = createDrawerNavigator({
   screens: {
-    Map: MapHomeScreen,
-    Feed: FeedListScreen,
-    Calendar: CalendarScreen,
+    Map: {
+      screen: MapStack,
+    },
+    Feed: {
+      screen: FeedStack,
+    },
+    Calendar: {
+      screen: CalendarScreen,
+    },
   },
 });
 
