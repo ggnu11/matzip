@@ -53,3 +53,37 @@ npm install @react-native-masked-view/masked-view
 
 npx pod-install ios
 ```
+
+4. `drawer` 설치를 위해 하단의 명령어 실행
+
+```
+npm install @react-navigation/drawer
+
+npm install react-native-gesture-handler react-native-reanimated
+
+npm install react-native-reanimated
+
+npm install react-native-worklets
+
+npx expo prebuild
+```
+
+5, `babel.config.js` 에 다음 코드 추가
+
+```
+  module.exports = {
+    presets: [
+      ... // don't add it here :)
+    ],
+    plugins: [
+      ...
+      'react-native-worklets/plugin',
+    ],
+  };
+```
+
+6. `npm start -- --reset-cache` 입력하여 캐시 초기화
+
+7. `cd ios && pod install && cd ..` 명령어로 `ios` 에 `pod` 설치
+
+8. `npx pod-install ios` 명령어로 `pod` 설치
