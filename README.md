@@ -87,3 +87,25 @@ npx expo prebuild
 7. `cd ios && pod install && cd ..` 명령어로 `ios` 에 `pod` 설치
 
 8. `npx pod-install ios` 명령어로 `pod` 설치
+
+## 아이콘 적용하기
+
+1. [아이콘 사이트](https://github.com/oblador/react-native-vector-icons?tab=readme-ov-file) 의 `Available Icon Sets - Actively maintained` 에서 사용할 아이콘을 선택한다.
+2. 다음 명령어로 아이콘을 설치한다.
+
+```
+
+// fontawesome6 + Icon
+
+npm install @react-native-vector-icons/fontawesome6 @react-native-vector-icons/ionicons
+```
+
+3. Setup - 다음 명령어로 ios를 설정한다(AppName에는 프로젝트명으로 수정)
+
+```
+// 기본
+npx rnvi-update-plist package.json ios/AppName/Info.plist
+
+// matzip
+npx rnvi-update-plist package.json ios/matzip/Info.plist
+```
