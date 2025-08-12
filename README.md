@@ -117,3 +117,13 @@ npx rnvi-update-plist package.json ios/matzip/Info.plist
 ```
 npm i -D babel-plugin-module-resolver
 ```
+
+## EncryptStorage 설치
+
+1. 다음 명령어로 `EncryptStorage` 설치
+
+```
+npm install react-native-encrypted-storage
+
+npx pod-install
+```
