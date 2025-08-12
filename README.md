@@ -109,3 +109,11 @@ npx rnvi-update-plist package.json ios/AppName/Info.plist
 // matzip
 npx rnvi-update-plist package.json ios/matzip/Info.plist
 ```
+
+## 절대 경로 설정
+
+1. 다음 명령어로 절대경로 설정
+
+```
+npm i -D babel-plugin-module-resolver
+```

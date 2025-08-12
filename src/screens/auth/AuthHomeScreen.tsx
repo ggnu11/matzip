@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import {SafeAreaView, StyleSheet, Text} from 'react-native';
-import {AuthStackParamList} from '../../types/navigation';
+import {AuthStackParamList} from '@/types/navigation';
 import {StackNavigationProp} from '@react-navigation/stack';
 
 type Navigation = StackNavigationProp<AuthStackParamList>;
