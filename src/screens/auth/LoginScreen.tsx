@@ -2,6 +2,7 @@ import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import InputField from '@/components/InputField';
 import CustomButton from '@/components/CustomButton';
 import useForm from '@/hooks/useForm';
+import {validateLogin} from '@/utils/validation';
 
 function LoginScreen() {
   const login = useForm({
@@ -9,6 +10,7 @@ function LoginScreen() {
       email: '',
       password: '',
     },
+    validate: validateLogin,
   });
 
   return (
@@ -17,13 +19,16 @@ function LoginScreen() {
         <InputField
           placeholder="이메일"
           touched={login.touched.email}
+          error={login.errors.email}
           {...login.getTextInputProps('email')}
         />
         <InputField
           secureTextEntry
           textContentType="oneTimeCode"
           placeholder="비밀번호"
+          maxLength={20}
           touched={login.touched.password}
+          error={login.errors.password}
           {...login.getTextInputProps('password')}
         />
       </View>

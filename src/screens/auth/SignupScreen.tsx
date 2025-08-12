@@ -1,7 +1,7 @@
 import CustomButton from '@/components/CustomButton';
 import InputField from '@/components/InputField';
 import useForm from '@/hooks/useForm';
-import {useState} from 'react';
+import {validateSignup} from '@/utils/validation';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 function SignupScreen() {
@@ -11,6 +11,7 @@ function SignupScreen() {
       password: '',
       passwordConfirm: '',
     },
+    validate: validateSignup,
   });
 
   return (
@@ -19,6 +20,7 @@ function SignupScreen() {
         <InputField
           placeholder="이메일"
           touched={signup.touched.email}
+          error={signup.errors.email}
           {...signup.getTextInputProps('email')}
         />
         <InputField
@@ -26,12 +28,14 @@ function SignupScreen() {
           textContentType="oneTimeCode"
           placeholder="비밀번호"
           touched={signup.touched.password}
+          error={signup.errors.password}
           {...signup.getTextInputProps('password')}
         />
         <InputField
           secureTextEntry
           placeholder="비밀번호 확인"
           touched={signup.touched.passwordConfirm}
+          error={signup.errors.passwordConfirm}
           {...signup.getTextInputProps('passwordConfirm')}
         />
       </View>
