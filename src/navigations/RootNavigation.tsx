@@ -2,7 +2,7 @@ import DrawerNavigation from './DrawerNavigation';
 import AuthNavigation from './AuthNavigation';
 
 function RootNavigation() {
-  const isLogin = true;
+  const isLogin = false;
 
   return <>{isLogin ? <DrawerNavigation /> : <AuthNavigation />}</>;
 }
