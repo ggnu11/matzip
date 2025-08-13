@@ -1,3 +1,7 @@
+## 깃허브 주소
+
+- [바로가기](https://github.com/InKyoJeong/Matzip/blob/class/3-6/matzip/src/components/InputField.tsx)
+
 ## 프로젝트 생성
 
 1. `npx @react-native-community/cli@18.0.0 init matzip --version 0.79.4` 명령어로 프로젝트 생성
@@ -127,3 +131,45 @@ npm install react-native-encrypted-storage
 
 npx pod-install
 ```
+
+## 백엔드
+
+1. server 파일 다운
+
+2. `npm i`로 의존성 설치
+3. `.env`에 코드 추가
+
+- DB_USERNAME : 터미널에 `whoami` 입력 후 결과값 추가
+
+4. 다음 명령어로 `postgresql14` 설치
+
+```
+brew install postgresql@14
+```
+
+5. `postgresql` 실행 명령어
+
+```
+// 실행
+brew services start postgresql@14
+
+// 중지
+brew services stop postgresql@14
+```
+
+6. `pgAdmin` 설치
+
+- [pgAdmin](https://www.postgresql.org/ftp/pgadmin/pgadmin4/v9.5/macos/) 클릭
+- `pgadmin4-9.5-arm64.dmg` 설치
+
+7. `matzip-app` 명의 서버 생성
+
+- 주의 : `brew services start postgresql@14`로 실행 후 서버를 생성해야함(미실행 시, 에러 발생)
+
+8. `npm run start:dev`로 서버 실행
+
+## API 추가
+
+1. `npm i axios` 로 `axios` 설치
+
+2. `ifconfig | grep inet`
