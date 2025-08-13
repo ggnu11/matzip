@@ -173,3 +173,7 @@ brew services stop postgresql@14
 1. `npm i axios` 로 `axios` 설치
 
 2. `ifconfig | grep inet`
+
+## Tanstack 설치
+
+1. `npm i @tanstack/react-query` 명령어로 Tanstack 설치

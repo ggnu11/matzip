@@ -1,24 +1,22 @@
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import InputField from '@/components/InputField';
+import React, {useRef} from 'react';
+import {SafeAreaView, StyleSheet, TextInput, View} from 'react-native';
+
 import CustomButton from '@/components/CustomButton';
+import InputField from '@/components/InputField';
+import useAuth from '@/hooks/queries/useAuth';
 import useForm from '@/hooks/useForm';
 import {validateLogin} from '@/utils/validation';
-import {useRef} from 'react';
-import {TextInput} from 'react-native-gesture-handler';
 
 function LoginScreen() {
+  const {loginMutation} = useAuth();
   const passwordRef = useRef<TextInput | null>(null);
-
   const login = useForm({
-    initialValue: {
-      email: '',
-      password: '',
-    },
+    initialValue: {email: '', password: ''},
     validate: validateLogin,
   });
 
   const handleSubmit = () => {
-    console.log('submit');
+    loginMutation.mutate(login.values);
   };
 
   return (
@@ -36,6 +34,7 @@ function LoginScreen() {
           {...login.getTextInputProps('email')}
         />
         <InputField
+          ref={passwordRef}
           secureTextEntry
           textContentType="oneTimeCode"
           placeholder="비밀번호"
