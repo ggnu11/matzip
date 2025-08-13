@@ -177,3 +177,7 @@ brew services stop postgresql@14
 ## Tanstack 설치
 
 1. `npm i @tanstack/react-query` 명령어로 Tanstack 설치
+
+## react-native-maps 설치
+
+1. `npm install react-native-maps` 명령어로 설치
