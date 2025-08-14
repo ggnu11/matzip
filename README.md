@@ -181,3 +181,7 @@ brew services stop postgresql@14
 ## react-native-maps 설치
 
 1. `npm install react-native-maps` 명령어로 설치
+
+## react-native-permissions 설치
+
+1. `npm i -S react-native-permissions`명령어로 `react-native-permissions` 설치
