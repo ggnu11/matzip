@@ -1,16 +1,23 @@
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {useNavigation} from '@react-navigation/native';
-import {Pressable, StyleSheet, Text} from 'react-native';
+import {colors} from '@/constants/colors';
 import {MainDrawerParamList} from '@/types/navigation';
 import Ionicons from '@react-native-vector-icons/ionicons';
-import {colors} from '@/constants/colors';
+import {DrawerNavigationProp} from '@react-navigation/drawer';
+import {useNavigation} from '@react-navigation/native';
+import {Pressable, StyleProp, StyleSheet, ViewStyle} from 'react-native';
 
 type Navigation = DrawerNavigationProp<MainDrawerParamList>;
 
-function DrawerButton({color = colors.BLACK}) {
+interface DrawerButtonProps {
+  color?: string;
+  style?: StyleProp<ViewStyle>;
+}
+
+function DrawerButton({style, color = colors.BLACK}: DrawerButtonProps) {
   const navigation = useNavigation<Navigation>();
   return (
-    <Pressable style={styles.container} onPress={() => navigation.openDrawer()}>
+    <Pressable
+      style={(styles.container, style)}
+      onPress={() => navigation.openDrawer()}>
       <Ionicons name="menu" size={25} color={color} />
     </Pressable>
   );
