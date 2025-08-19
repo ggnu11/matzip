@@ -5,8 +5,8 @@ import useAppState from './useAppState';
 
 function useUserLocation() {
   const [userLocation, setUserLocation] = useState<LatLng>({
-    latitude: 37.545471,
-    longitude: 127.053515,
+    latitude: 37.5516032365118,
+    longitude: 126.98989626020192,
   });
   const [isUserLocationError, setIsUserLocationError] = useState(false);
   const {isComeback} = useAppState();
@@ -17,6 +17,7 @@ function useUserLocation() {
     Geolocation.getCurrentPosition(
       info => {
         setUserLocation(info.coords);
+        setIsUserLocationError(false);
       },
       () => {
         setIsUserLocationError(true);
