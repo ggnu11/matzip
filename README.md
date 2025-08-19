@@ -2,6 +2,14 @@
 
 - [바로가기](https://github.com/InKyoJeong/Matzip/blob/class/3-6/matzip/src/components/InputField.tsx)
 
+## 첫 빌드시
+
+- npm install
+- ios
+  - cd ios
+  - pod install
+- npm run android
+
 ## 프로젝트 생성
 
 1. `npx @react-native-community/cli@18.0.0 init matzip --version 0.79.4` 명령어로 프로젝트 생성
@@ -177,3 +185,8 @@ brew services stop postgresql@14
 ## Tanstack 설치
 
 1. `npm i @tanstack/react-query` 명령어로 Tanstack 설치
+
+## react-native-maps 설치
+
+1. `npm install react-native-maps@1.23.12` 버전으로 설치
+2. `npx pod-install ios`로 pod 설치
